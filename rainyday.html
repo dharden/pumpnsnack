@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>pumpnsnack rainy day</title>
+		<style media="screen">
+			body {
+				overflow: hidden;
+			}
+
+			#parent {
+				width: 100%;
+				height: 100%;
+				margin: 0 auto;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+
+			#parent img {
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+		<script src="http://maroslaw.github.io/rainyday.js/dist/rainyday.0.1.2.min.js"></script>
+		<script>
+			function run() {
+				var engine = new RainyDay({
+					element: 'background',
+					blur: 10,
+					opacity: 1,
+					fps: 30
+				});
+				engine.rain([ [1, 2, 8000] ]);
+				engine.rain([ [3, 3, 0.88], [5, 5, 0.9], [6, 2, 1] ], 100);
+			}
+		</script>
+	</head>
+	<body onload="run();">
+		<div id="parent">
+			<img id="background" alt="background" src="img/pumpnimation.gif" />
+		</div>
+	</body>
+</html>
